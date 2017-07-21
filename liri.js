@@ -1,10 +1,9 @@
 // Grab data from keys.js
 
-var keys = require('./keys');
-var request = require('request');
-var twitter = require('twitter');
-var spotify = require('spotify');
-var client = new twitter(keys.twitterKeys);
+// var request = require('request');
+// var twitter = require('twitter');
+var spotifySong = require('./spotify');
+var showTweets = require('./showTweets');
 var fs = require('fs');
 
 // stored argument's array
@@ -31,6 +30,7 @@ switch (command) {
 
     case "spotify-this-song":
         if (x) {
+            console.log(x);
             spotifySong(x);
         } else {
             spotifySong("Through the Wire");
