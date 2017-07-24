@@ -3,6 +3,7 @@
 var fs = require('fs');
 var spotifySong = require('./spotify');
 var showTweets = require('./showTweets');
+var omdbData = require('./obdb');
 
 
 // stored argument's array
@@ -38,9 +39,9 @@ switch (command) {
 
     case "movie-this":
         if (x) {
-            omdbData(x)
+            omdb(x)
         } else {
-            omdbData("Fight Club")
+            omdb("Fight Club")
         }
         break;
 
