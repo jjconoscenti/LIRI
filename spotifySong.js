@@ -14,8 +14,8 @@ function displayAlbum(album) {
     return album.name
 }
 
-function displayURL(external_url) {
-    return external_url
+function displayURL(external_urls) {
+    return external_urls.spotify
 }
 
 function displayTrack(track) {

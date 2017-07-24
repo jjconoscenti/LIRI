@@ -30,9 +30,9 @@ switch (command) {
     case "spotify-this-song":
         if (x) {
             console.log(x);
-            spotifySong(x);
+            spotifycommand(x);
         } else {
-            spotifySong("Through the Wire");
+            spotifycommand("Through the Wire");
         }
         break;
 
@@ -55,4 +55,23 @@ switch (command) {
         console.log("spotify-this-song -- provides preview link to a song on Spotify");
         console.log("movie-this -- displays basic info from IMDB for a movie");
         console.log("do-what-it-says -- performs a task. If not available it will search for a song of that name in Spotify");
+}
+
+function doThing() {
+    fs.readFile('random.txt', 'utf8', function(err, data) {
+        if (err) {
+            return console.log("Error occurred: " + err);
+        }
+        var dataArray = data.split(",");
+        randomSongName = dataArray[1];
+        spotify.search({ type: 'track', query: '${randomSongName}' }, function(err, data) {
+            if (err) {
+                console.log("Error occurred: " + err);
+            }
+            console.log(`Artist: ${data.tracks.items[0].artists[0].name}`);
+            console.log(`Song Name: ${data.tracks.items[0].name}`);
+            console.log(`Album: ${data.tracks.items[0].album.name}`);
+            console.log(`URL: ${data.tracks.items[0].external_urls.spotify}`);
+        })
+    })
 }
