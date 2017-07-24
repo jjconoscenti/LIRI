@@ -20,6 +20,8 @@
   "homepage": "https://github.com/jjconoscenti/LIRI#readme",
   "dependencies": {
     "node-spotify-api": "^1.0.5",
+    "spotify": "^0.3.0",
     "twitter": "^1.7.1"
-  }
+  },
+  "devDependencies": {}
 }

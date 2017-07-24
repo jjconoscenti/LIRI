@@ -1,10 +1,9 @@
 // Grab data from keys.js
 
-// var request = require('request');
-// var twitter = require('twitter');
+var fs = require('fs');
 var spotifySong = require('./spotify');
 var showTweets = require('./showTweets');
-var fs = require('fs');
+
 
 // stored argument's array
 var nodeArgv = process.argv;
