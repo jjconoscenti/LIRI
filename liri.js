@@ -1,9 +1,10 @@
 // Grab data from keys.js
 
 var fs = require('fs');
-var spotifySong = require('./spotify');
+var spotify = require('./spotify');
 var showTweets = require('./showTweets');
-var omdbData = require('./obdb');
+var omdbData = require('./omdb');
+
 
 
 // stored argument's array
@@ -50,9 +51,9 @@ switch (command) {
     case "spotify-this-song":
         if (x) {
             console.log(x);
-            spotifycommand(x);
+            spotify(x);
         } else {
-            spotifycommand("Through the Wire");
+            spotify("Through the Wire");
         }
         break;
 

@@ -27,9 +27,11 @@ var spotify = new Spotify({
 //     });
 // }
 
-module.exports = function() {
+module.exports = function(songName) {
 
-    spotify.search({ type: 'track', query: '${songName}' }, function(err, data) {
+    var song = songName;
+
+    spotify.search({ type: 'track', query: `${song}` }, function(err, data) {
         if (err) {
             return console.log("Error: " + err);
         }
@@ -38,5 +40,6 @@ module.exports = function() {
         console.log(`Song Name: ${data.tracks.items[0].name}`);
         console.log(`Album: ${data.tracks.items[0].album.name}`);
         console.log(`URL: ${data.tracks.items[0].external_urls.spotify}`);
+        //console.log(data);
     })
 }
