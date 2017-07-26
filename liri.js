@@ -3,7 +3,7 @@
 var fs = require('fs');
 var spotify = require('./spotify');
 var showTweets = require('./showTweets');
-var omdbData = require('./omdb');
+var omdb = require('./omdb');
 
 // stored argument's array
 var nodeArgv = process.argv;
@@ -11,6 +11,16 @@ var command = process.argv[2];
 
 // movie or song
 var x = "";
+
+var writeToLog = function(data) {
+    fs.appendFile("log.txt", '\r\n\r\n');
+    fs.appendFile("log.txt", JSON.stringify(data), function(err) {
+        if (err) {
+            return console.log("Error occurred" + err);
+        }
+        console.log("log.txt was updated!!!");
+    });
+}
 
 //attach multiple word arguments
 for (var i = 3; i < nodeArgv.length; i++) {
@@ -38,7 +48,8 @@ switch (command) {
 
     case "movie-this":
         if (x) {
-            omdb(x)
+            omdb(x);
+            console.log(x);
         } else {
             omdb("Fight Club")
         }
