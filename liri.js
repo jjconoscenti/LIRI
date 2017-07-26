@@ -5,8 +5,6 @@ var spotify = require('./spotify');
 var showTweets = require('./showTweets');
 var omdbData = require('./omdb');
 
-
-
 // stored argument's array
 var nodeArgv = process.argv;
 var command = process.argv[2];
@@ -21,25 +19,6 @@ for (var i = 3; i < nodeArgv.length; i++) {
     } else {
         x = x + nodeArgv[i];
     }
-}
-
-function doThing() {
-    fs.readFile('random.txt', 'utf8', function(err, data) {
-        if (err) {
-            return console.log("Error occurred: " + err);
-        }
-        var dataArray = data.split(",");
-        randomSongName = dataArray[1];
-        spotify.search({ type: 'track', query: '${randomSongName}' }, function(err, data) {
-            if (err) {
-                console.log("Error occurred: " + err);
-            }
-            console.log(`Artist: ${data.tracks.items[0].artists[0].name}`);
-            console.log(`Song Name: ${data.tracks.items[0].name}`);
-            console.log(`Album: ${data.tracks.items[0].album.name}`);
-            console.log(`URL: ${data.tracks.items[0].external_urls.spotify}`);
-        })
-    })
 }
 
 //switch cases
