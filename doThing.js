@@ -13,7 +13,7 @@ module.exports = function doThing() {
         }
         var dataArray = data.split(",");
         randomSongName = dataArray[1];
-        spotify.search({ type: 'track', query: '${randomSongName}' }, function(err, data) {
+        spotify.search({ type: 'track', query: `${randomSongName}` }, function(err, data) {
             if (err) {
                 console.log("Error occurred: " + err);
             }
