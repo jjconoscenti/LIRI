@@ -21,6 +21,6 @@ module.exports = function doThing() {
             console.log(`Song Name: ${data.tracks.items[0].name}`);
             console.log(`Album: ${data.tracks.items[0].album.name}`);
             console.log(`URL: ${data.tracks.items[0].external_urls.spotify}`);
-        })
-    })
+        });
+    });
 }

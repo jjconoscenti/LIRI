@@ -7,6 +7,8 @@ module.exports = function(movie) {
         if (error) {
             console.log("error:", error);
         } else {
+            console.log("Here's your movie data");
+            console.log("--------------------------------------");
             console.log(`Title: ${JSON.parse(body).Title}`);
             console.log(`Year: ${JSON.parse(body).Year}`);
             console.log(`IMDB Rating: ${JSON.parse(body).Ratings[0].Value}`);

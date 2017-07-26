@@ -9,6 +9,9 @@ var omdb = require('./omdb');
 var nodeArgv = process.argv;
 var command = process.argv[2];
 
+// for doThing function
+var randomSongName;
+
 // movie or song
 var x = "";
 
