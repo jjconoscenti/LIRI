@@ -1,3 +1,4 @@
+var fs = require('fs');
 var keys = require('./keys');
 var Spotify = require('node-spotify-api');
 

@@ -4,8 +4,8 @@ var fs = require('fs');
 var spotify = require('./spotify');
 var showTweets = require('./showTweets');
 var omdb = require('./omdb');
-
-// stored argument's array
+var doThing = require('./doThing')
+    // stored argument's array
 var nodeArgv = process.argv;
 var command = process.argv[2];
 
